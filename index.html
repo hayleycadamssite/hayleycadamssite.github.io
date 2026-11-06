@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hayley Adams</title>
+<meta name="description" content="Hayley Adams is a Melbourne producer of TikTok-first series, audio drama and creator-led brand campaigns.">
+<meta property="og:title" content="Hayley Adams">
+<meta property="og:description" content="Producer of TikTok-first series, audio drama and creator-led brand campaigns. Melbourne, Australia.">
+<meta property="og:image" content="assets/headshot.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%23F0492E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* Layout: a portfolio that leads with the work. Masthead, then every project
+     as a full row (playable media beside the full write-up), then career,
+     awards and contact. */
+  :root {
+    --paper: #FAF7F1;
+    --sheet: #F2EDE3;
+    --ink: #1a1a1a;
+    --body: #4a443c;
+    --muted: #5f594f;
+    --quiet: #8a8378;
+    --rule: #e2dccf;
+    --rule-strong: #d3ccbe;
+    --accent: #F0492E;
+    --on-accent: #ffffff;
+    --scrim: rgba(20, 17, 14, .72);
+    --display: Newsreader, "Iowan Old Style", Georgia, serif;
+    --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --mono: "Space Mono", "SFMono-Regular", Menlo, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #181613; --sheet: #201d19; --ink: #f2ede4; --body: #cfc7ba; --muted: #b8b0a3;
+      --quiet: #8f877a; --rule: #302c26; --rule-strong: #3d3831; --accent: #FF6A4D; --on-accent: #1a0d09;
+      --scrim: rgba(0, 0, 0, .78);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #181613; --sheet: #201d19; --ink: #f2ede4; --body: #cfc7ba; --muted: #b8b0a3;
+    --quiet: #8f877a; --rule: #302c26; --rule-strong: #3d3831; --accent: #FF6A4D; --on-accent: #1a0d09;
+    --scrim: rgba(0, 0, 0, .78);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+  .wrap {
+    max-width: 1180px; margin: 0 auto;
+    padding-left: max(28px, env(safe-area-inset-left, 0px));
+    padding-right: max(28px, env(safe-area-inset-right, 0px));
+  }
+  @media (max-width: 520px) {
+    .wrap { padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px)); }
+  }
+
+  /* ---------- top bar ---------- */
+  .bar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 90%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar .wrap { display: flex; align-items: center; gap: 24px; padding-block: 14px; }
+  .mark { font: 500 22px/1 var(--display); letter-spacing: -.01em; text-decoration: none; white-space: nowrap; }
+  .mark span { color: var(--accent); }
+  .bar nav { display: flex; gap: 26px; margin-left: auto; }
+  .bar nav a { font: 400 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; text-decoration: none; color: var(--muted); }
+  .bar nav a:hover { color: var(--accent); }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+    font: 600 13px/1 var(--sans); text-decoration: none;
+    padding: 10px 16px; border-radius: 999px;
+    background: var(--ink); color: var(--paper); border: 1.5px solid var(--ink);
+  }
+  .pill:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .pill.ghost { background: transparent; color: var(--ink); }
+  .pill.ghost:hover { background: transparent; color: var(--accent); border-color: var(--accent); }
+  .pill svg { width: 14px; height: 14px; }
+  @media (max-width: 760px) { .bar nav { display: none; } .bar .pill { margin-left: auto; } }
+
+  /* ---------- masthead ---------- */
+  .mast { padding-block: 72px 64px; }
+  .mast-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 56px; align-items: center; }
+  .eyebrow { font: 700 12px/1.4 var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  h1 {
+    margin: 18px 0 0; font: 500 clamp(56px, 11vw, 136px)/.9 var(--display);
+    font-variation-settings: "opsz" 72; letter-spacing: -.03em;
+  }
+  h1 span { color: var(--accent); }
+  .lede {
+    margin: 28px 0 0; max-width: 30ch;
+    font: 400 clamp(22px, 2.8vw, 31px)/1.28 var(--display); letter-spacing: -.005em; text-wrap: balance;
+  }
+  .lede em { color: var(--accent); }
+  .mast-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .portrait {
+    width: clamp(220px, 27vw, 380px); aspect-ratio: 1 / 1; object-fit: cover; object-position: center;
+    border-radius: 50%; display: block; box-shadow: 0 0 0 1.5px var(--rule);
+  }
+  .portrait-cap { margin-top: 12px; font: 400 11.5px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--quiet); text-align: center; }
+  @media (max-width: 720px) {
+    .mast { padding-block: 40px 44px; }
+    .mast-grid { grid-template-columns: 1fr; gap: 28px; }
+    .mast-grid > figure { order: -1; }
+    .portrait { width: 132px; }
+    .portrait-cap { text-align: left; }
+  }
+  figure { margin: 0; }
+
+  /* ---------- sections ---------- */
+  section.block { padding-block: 72px; scroll-margin-top: 70px; }
+  .band { background: var(--sheet); border-block: 1px solid var(--rule); }
+  .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 12px 32px; flex-wrap: wrap; }
+  .sec-head h2 { margin: 0; font: 500 clamp(36px, 5vw, 56px)/1 var(--display); letter-spacing: -.02em; }
+  .sec-head h2 small { display: block; margin-bottom: 12px; font: 700 12px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .sec-head p { margin: 0; max-width: 46ch; font: 400 16.5px/1.55 var(--sans); color: var(--muted); }
+
+  /* ---------- work list ---------- */
+  .works { margin-top: 36px; }
+  .work {
+    display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px 56px; align-items: start;
+    padding-block: 48px; border-top: 1px solid var(--rule); scroll-margin-top: 80px;
+  }
+  .work:first-child { border-top: 0; padding-top: 12px; }
+  @media (max-width: 820px) { .work { grid-template-columns: 1fr; gap: 20px; padding-block: 36px; } }
+  .media {
+    position: relative; min-width: 0; width: 100%; max-width: 100%; aspect-ratio: 16 / 10;
+    overflow: hidden; border-radius: 4px; background: #0f0d0b;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .media .bg { position: absolute; inset: -12%; width: 124%; height: 124%; max-width: none; object-fit: cover; filter: blur(24px) saturate(1.1); opacity: .9; }
+  .media .fg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .media.cover .fg { object-fit: cover; }
+  .media iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
+  .media.is-tall { aspect-ratio: auto; height: min(640px, 80vh); background: #000; }
+  .media.is-tall iframe { position: relative; inset: auto; width: auto; height: 100%; aspect-ratio: 9 / 16; max-width: 100%; }
+  .media.is-ig iframe { width: min(400px, 100%); aspect-ratio: auto; background: #fff; }
+  .play {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1;
+    width: 68px; height: 68px; border-radius: 50%; border: 0; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: rgba(20, 17, 14, .62); color: #fff;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 0 0 1.5px rgba(255,255,255,.55), 0 10px 30px rgba(0,0,0,.3);
+    transition: background .2s ease, transform .2s ease;
+  }
+  .play svg { width: 28px; height: 28px; margin-left: 3px; }
+  .play:hover { background: #F0492E; transform: translate(-50%, -50%) scale(1.06); }
+  .info { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+  .info .kind { font: 700 11px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+  .info h3 { margin: 0; font: 500 clamp(30px, 3.4vw, 42px)/1.02 var(--display); letter-spacing: -.015em; text-wrap: balance; }
+  .info h3 span { display: block; margin-top: 8px; font: 400 13px/1 var(--mono); letter-spacing: .06em; color: var(--quiet); }
+  .info p { margin: 0; max-width: 52ch; font: 400 16.5px/1.6 var(--sans); color: var(--body); }
+  .info p a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  .info ul { margin: 2px 0 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+  .info li { position: relative; padding-left: 17px; font: 400 15px/1.45 var(--sans); }
+  .info li::before { content: ""; position: absolute; left: 0; top: .55em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .out { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 10px 22px; }
+  .out a { font: 600 14px/1.3 var(--sans); color: var(--ink); text-decoration: none; border-bottom: 1.5px solid var(--accent); padding-bottom: 2px; }
+  .out a:hover { color: var(--accent); }
+
+  /* ---------- about ---------- */
+  .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px 72px; align-items: start; }
+  @media (max-width: 880px) { .about { grid-template-columns: 1fr; } }
+  .story p { margin: 22px 0 0; max-width: 58ch; font: 400 17px/1.65 var(--sans); color: var(--body); }
+  .story p:first-of-type { font: 400 clamp(21px, 2.3vw, 25px)/1.42 var(--display); color: var(--ink); }
+  .story em { font-style: italic; }
+  .socials { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px 26px; }
+  .socials a { font: 600 14.5px/1.2 var(--sans); text-decoration: none; color: var(--accent); border-bottom: 1.5px solid var(--accent); padding-bottom: 3px; }
+  .socials a:hover { border-bottom-color: transparent; }
+  .timeline { margin: 0; padding: 0; list-style: none; }
+  .timeline > li { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 18px; padding-block: 18px 20px; border-top: 1px solid var(--rule); }
+  .timeline > li:first-child { border-top: 0; padding-top: 16px; }
+  .timeline > li:last-child { border-bottom: 1px solid var(--rule); }
+  .timeline .yrs { font: 400 12.5px/1.7 var(--mono); color: var(--quiet); font-variant-numeric: tabular-nums; }
+  .timeline h3 { margin: 0; font: 500 25px/1.1 var(--display); }
+  .timeline h3 a { text-decoration: none; }
+  .timeline h3 a:hover { color: var(--accent); }
+  .timeline .roles { margin: 8px 0 0; padding: 0; list-style: none; display: grid; gap: 3px; }
+  .timeline .roles li { font: 600 14.5px/1.45 var(--sans); }
+  .timeline .roles li span { font: 400 12px/1 var(--mono); color: var(--quiet); margin-left: 8px; white-space: nowrap; }
+  .timeline p { margin: 8px 0 0; font: 400 14.5px/1.55 var(--sans); color: var(--muted); }
+  .timeline p a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  .timeline p a:hover { color: var(--accent); }
+  .rows a.ttl { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  .rows a.ttl:hover { color: var(--accent); }
+  .press { margin-top: 10px; display: flex; flex-direction: column; align-items: flex-start; gap: 7px; }
+  .press a { font: 600 12.5px/1.35 var(--sans); color: var(--accent); text-decoration: none; border-bottom: 1.5px solid currentColor; padding-bottom: 1px; }
+  .press a:hover { border-bottom-color: transparent; }
+  @media (max-width: 480px) { .timeline > li { grid-template-columns: 1fr; gap: 6px; } }
+
+  /* ---------- recognition ---------- */
+  .rec { margin-top: 40px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px 72px; align-items: start; }
+  .rec h3.label { margin: 0 0 6px; font: 700 12px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--quiet); }
+  @media (max-width: 880px) { .rec { grid-template-columns: 1fr; } }
+  .rows { margin: 0; padding: 0; list-style: none; }
+  .rows li { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 18px; padding-block: 16px; border-bottom: 1px solid var(--rule); }
+  .rows .yr { font: 700 12px/1.7 var(--mono); color: var(--accent); white-space: nowrap; }
+  .rows b { display: block; font: 600 16.5px/1.45 var(--sans); }
+  .rows span.sub { display: block; margin-top: 2px; font: 400 15px/1.5 var(--sans); color: var(--muted); }
+  .rows a.more { display: inline-block; margin-top: 6px; font: 600 12.5px/1 var(--sans); color: var(--accent); text-decoration: none; border-bottom: 1.5px solid currentColor; padding-bottom: 2px; }
+
+  /* ---------- contact ---------- */
+  footer { padding-block: 88px 64px; border-top: 1.5px solid var(--ink); }
+  .say { margin: 0; font: 500 clamp(48px, 9vw, 112px)/.92 var(--display); letter-spacing: -.03em; }
+  .say a { text-decoration: none; }
+  .say a:hover span { color: var(--ink); }
+  .say span { color: var(--accent); transition: color .2s ease; }
+  .contact-row { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px 40px; align-items: center; font: 400 14px/1.4 var(--mono); }
+  .contact-row a { text-decoration: none; }
+  .contact-row a:hover { color: var(--accent); }
+  .contact-row .pill { font-family: var(--sans); }
+  .fine { margin-top: 56px; font: 400 11.5px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--quiet); }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  body.locked { overflow: hidden; }
+  button.pill { cursor: pointer; font-family: var(--sans); }
+
+  /* ---------- resume request ---------- */
+  dialog#ask {
+    width: min(520px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow-y: auto;
+    margin: auto; padding: 0; border: 0; border-radius: 8px;
+    background: var(--paper); color: var(--ink); box-shadow: 0 30px 80px rgba(0,0,0,.3);
+  }
+  dialog#ask::backdrop { background: var(--scrim); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+  dialog#ask[open] { animation: rise .3s cubic-bezier(.2,.7,.2,1); }
+  .ask-in { position: relative; padding: 34px 32px 30px; }
+  @media (max-width: 480px) { .ask-in { padding: 28px 20px 24px; } }
+  .ask-in h2 { margin: 10px 0 0; font: 500 34px/1.05 var(--display); letter-spacing: -.015em; }
+  .ask-in > p { margin: 10px 0 0; font: 400 15.5px/1.55 var(--sans); color: var(--muted); }
+  .ask-in .x { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--rule-strong); background: none; color: var(--ink); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+  .ask-in .x:hover { border-color: var(--accent); color: var(--accent); }
+  .ask-in .x svg { width: 14px; height: 14px; }
+  .ask-actions { margin-top: 22px; }
+  .ask-actions .pill svg { width: 16px; height: 16px; }
+  .ask-alt { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--rule); display: grid; gap: 8px; }
+  .ask-alt > span { font: 700 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--quiet); }
+  .addr { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .addr span { font: 400 16px/1.4 var(--mono); user-select: all; word-break: break-all; }
+  .addr button { font: 600 12.5px/1 var(--sans); padding: 8px 13px; border-radius: 999px; border: 1px solid var(--rule-strong); background: none; color: var(--ink); cursor: pointer; }
+  .addr button:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top">Hayley Adams<span>.</span></a>
+    <nav aria-label="Sections">
+      <a href="#originals">Originals</a>
+      <a href="#background">Career</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="pill" type="button" data-request>Request resume</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== MASTHEAD ===================== -->
+  <div class="mast">
+    <div class="wrap mast-grid">
+      <div>
+        <div class="eyebrow">Producer · Melbourne, Australia</div>
+        <h1>Hayley Adams<span>.</span></h1>
+      </div>
+      <figure>
+        <img class="portrait" src="assets/headshot.jpg" alt="Hayley Adams">
+      </figure>
+    </div>
+  </div>
+
+  <!-- ===================== ORIGINALS ===================== -->
+  <section class="block" id="originals">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Originals</h2>
+        <p>Original, funded and award-recognised work across TikTok, Audible, podcast, branded content and film. Press play on an image to watch.</p>
+      </div>
+      <div class="works" id="works"></div>
+    </div>
+  </section>
+
+  <!-- ===================== RECOGNITION ===================== -->
+  <!-- ===================== RECOGNITION ===================== -->
+  <section class="block" id="background">
+    <div class="wrap">
+      <div class="sec-head"><h2><small>Background</small>Career &amp; awards</h2></div>
+      <div class="rec">
+        <div>
+          <h3 class="label">Career</h3>
+          <ol class="timeline" aria-label="Career">
+        <li>
+          <span class="yrs">2022–2026</span>
+          <div>
+            <h3><a href="https://thisisamplify.com" target="_blank" rel="noopener">Amplify</a></h3>
+            <ul class="roles">
+              <li>Head of Content, Asia &amp; Growth Markets <span>2026</span></li>
+              <li>Group Operations &amp; Growth Manager <span>2024–26</span></li>
+              <li>Senior Producer <span>2022–24</span></li>
+            </ul>
+            <p>Helped expand Amplify's operations across Asia Pacific, then led content for Asia and Growth Markets. Produced the long-form slate, including <a href="https://www.audible.com.au/pd/Sounds-Like-You-Audiobook/B0DF82J4D1" target="_blank" rel="noopener"><em>Sounds Like You</em></a> and <a href="https://open.spotify.com/show/4ArZ7AcbFycPyN5ueOcq4g" target="_blank" rel="noopener"><em>The Single Squad</em></a>, and secured Screen Australia development funding for the feature adaptation of <em>What I Like About Me</em>.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yrs">2021–2022</span>
+          <div>
+            <h3><a href="https://unlesspictures.com" target="_blank" rel="noopener">Unless Pictures</a></h3>
+            <ul class="roles"><li>Producer</li></ul>
+            <p>Developed a slate of short-form, TV and feature projects as a Screen Australia Enterprise People placement.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yrs">2016–2021</span>
+          <div>
+            <h3><a href="https://balloontreeproductions.com" target="_blank" rel="noopener">Balloon Tree Productions</a></h3>
+            <ul class="roles"><li>Producer</li></ul>
+            <p>Produced TVC and corporate work for Specsavers, The Good Guys, Boost Juice and McCain, plus the short films <a href="http://katelefoe.com/films/chicken/" target="_blank" rel="noopener"><em>Chicken</em></a> and <a href="https://www.youtube.com/watch?v=SxJVaAX9GWA" target="_blank" rel="noopener"><em>There's a Mobster Under My Bed</em></a>.</p>
+          </div>
+        </li>
+      </ol>
+        </div>
+        <div>
+          <h3 class="label">Awards</h3>
+          <ul class="rows">
+            <li><span class="yr">2025</span><div><b>ABIA Australian Audiobook of the Year, Nominee</b><span class="sub"><a class="ttl" href="https://www.audible.com.au/pd/Sounds-Like-You-Audiobook/B0DF82J4D1" target="_blank" rel="noopener"><em>Sounds Like You</em></a>, Audible Original.</span><a class="more" href="https://abiawards.com.au/2025-book-awards-shortlist-announcement/" target="_blank" rel="noopener">Read coverage →</a></div></li>
+            <li><span class="yr">2024</span><div><b>Creative Partner of the Year, TikTok Ad Awards</b><span class="sub">Won by the Amplify South East Asia team under my regional leadership.</span></div></li>
+            <li><span class="yr">2023</span><div><b>Mumbrella Awards, Double Nominee</b><span class="sub">Amplify: Production Company of the Year and Specialist Agency of the Year.</span></div></li>
+            <li><span class="yr">2021–23</span><div><b>Screen Australia Enterprise People Recipient</b><span class="sub">Two-year funded placement across Unless Pictures and Amplify.</span><a class="more" href="https://if.com.au/hayley-adams-sanja-simic-join-unless-pictures/" target="_blank" rel="noopener">Read coverage →</a></div></li>
+            <li><span class="yr">2020–21</span><div><b>Screen Forever "Ones to Watch"</b><span class="sub">Winner, SBS First Look Development Grant (Screen Producers Australia).</span><a class="more" href="https://if.com.au/spa-announces-ones-to-watch-winners/" target="_blank" rel="noopener">Read coverage →</a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== CONTACT ===================== -->
+<footer id="contact">
+  <div class="wrap">
+    <p class="say"><a href="mailto:hayleycadams@gmail.com">Let's make<br>something<span>.</span></a></p>
+    <div class="contact-row">
+      <a href="mailto:hayleycadams@gmail.com">hayleycadams@gmail.com</a>
+      <a href="https://www.linkedin.com/in/hayleycadams/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://www.instagram.com/hayleyadams9/" target="_blank" rel="noopener">Instagram ↗</a>
+      <span>Melbourne, Australia</span>
+    </div>
+    <div class="fine">© 2026 Hayley Adams</div>
+  </div>
+</footer>
+
+<!-- ===================== RESUME REQUEST ===================== -->
+<dialog id="ask" aria-labelledby="ask-title">
+  <div class="ask-in">
+    <button class="x" type="button" id="ask-close" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3.5 3.5 9 9m0-9-9 9"/></svg></button>
+    <div class="eyebrow">Resume</div>
+    <h2 id="ask-title">Request my resume</h2>
+    <p>Send me a quick email and I'll send you the PDF.</p>
+    <div class="ask-actions">
+      <a class="pill" id="ask-mail" href="mailto:hayleycadams@gmail.com?subject=Resume%20request&body=Hi%20Hayley%2C%0A%0AI%20checked%20out%20your%20website%20and%20would%20love%20to%20see%20a%20copy%20of%20your%20resume.%20Would%20you%20be%20able%20to%20send%20it%20through%3F%0A%0AThanks%2C">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1.75" y="3.25" width="12.5" height="9.5" rx="1.5"/><path d="m2.5 4.5 5.5 4.25L13.5 4.5"/></svg>
+        Write the email
+      </a>
+    </div>
+    <div class="ask-alt">
+      <span>Or email me directly</span>
+      <div class="addr">
+        <span id="ask-addr">hayleycadams@gmail.com</span>
+        <button type="button" id="ask-copy">Copy</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* ---------- media helpers ---------- */
+const yt = (id, label = 'Watch') => ({ label, type: 'wide', src: `https://www.youtube-nocookie.com/embed/${id}?rel=0`, href: `https://www.youtube.com/watch?v=${id}`, site: 'YouTube', thumb: `https://i.ytimg.com/vi/${id}/hqdefault.jpg` });
+const ytList = (list, label = 'Watch') => ({ label, type: 'wide', src: `https://www.youtube-nocookie.com/embed/videoseries?list=${list}`, href: `https://www.youtube.com/playlist?list=${list}`, site: 'YouTube' });
+const drive = (id, label = 'Watch') => ({ label, type: 'wide', src: `https://drive.google.com/file/d/${id}/preview`, href: `https://drive.google.com/file/d/${id}/view`, site: 'Google Drive', thumb: `https://drive.google.com/thumbnail?id=${id}&sz=w1200` });
+const driveFolder = (id, label = 'Browse assets') => ({ label, type: 'folder', src: `https://drive.google.com/embeddedfolderview?id=${id}#grid`, href: `https://drive.google.com/drive/folders/${id}`, site: 'Google Drive' });
+const tiktok = (id, label = 'Watch', user = '') => ({ label, type: 'tall', src: `https://www.tiktok.com/player/v1/${id}?rel=0&description=1`, href: `https://www.tiktok.com/@${user}/video/${id}`, site: 'TikTok', oembed: `https://www.tiktok.com/oembed?url=${encodeURIComponent(`https://www.tiktok.com/@${user}/video/${id}`)}` });
+const tiktokProfile = (user, label = 'Watch on TikTok') => ({ label, type: 'profile', user, href: `https://www.tiktok.com/@${user}`, site: 'TikTok' });
+const insta = (code, label = 'Watch') => ({ label, type: 'tall ig', src: `https://www.instagram.com/reel/${code}/embed/`, href: `https://www.instagram.com/reel/${code}/`, site: 'Instagram', thumb: `https://www.instagram.com/p/${code}/media/?size=l` });
+const spotify = (show, label = 'Listen') => ({ label, type: 'audio', src: `https://open.spotify.com/embed/show/${show}?utm_source=generator`, href: `https://open.spotify.com/show/${show}`, site: 'Spotify', oembed: `https://open.spotify.com/oembed?url=${encodeURIComponent(`https://open.spotify.com/show/${show}`)}` });
+const apple = (path, label = 'Listen') => ({ label, type: 'audio short', src: `https://embed.podcasts.apple.com/${path}`, href: `https://podcasts.apple.com/${path}`, site: 'Apple Podcasts' });
+
+/* ---------- projects ---------- */
+const originals = [
+  {
+    slug: 'love-songs', title: 'Love Songs', year: '2020–2021', img: 'love-songs.jpg', kind: 'TikTok Series · 41×1min',
+    blurb: "The world's first narrative web series produced exclusively for TikTok.",
+    body: "The world's first narrative web series produced exclusively for TikTok, blending traditional filmmaking with platform-native trends.",
+    notes: ['25M+ views', 'Season 2 in partnership with Tinder'],
+    media: [drive('1lT7mvcSkFih2uRmyTQlPWKx1NXNYyoLY', 'Trailer')],
+    links: [['lovesongsseries.com', 'https://www.lovesongsseries.com/'], ['Podcast: Making Scripted Content for TikTok', 'https://podcasts.apple.com/us/podcast/making-scripted-content-for-tiktok/id1342998466?i=1000524193579']]
+  },
+  {
+    slug: 'sounds-like-you', title: 'Sounds Like You', year: '2024', img: 'sounds-like-you.jpg', kind: 'Audible Original · Audio Drama',
+    blurb: 'An audio rom-com narrated by TikTok creators, nominated for the 2025 ABIA Audiobook of the Year.',
+    body: 'A university student creates an audio-only dating app and falls for her business partner. Narrated by TikTok creators <a href="https://www.tiktok.com/@georgia/video/7425848966484430098?lang=en" target="_blank" rel="noopener">Georgia McCudden</a> and <a href="https://www.tiktok.com/@olivermillsn/video/7421317595300629778" target="_blank" rel="noopener">Oliver Mills</a>.',
+    notes: ['Nominated, 2025 ABIA Australian Audiobook of the Year', '1M+ social views in its first week'],
+    media: [insta('DA5L3CoIMPA', 'Launch reel')],
+    links: [['Listen on Audible', 'https://www.audible.com.au/pd/Sounds-Like-You-Audiobook/B0DF82J4D1']]
+  },
+  {
+    slug: 'vaseline', title: 'Live Without Limits', year: '', img: 'vaseline.jpg', cover: true, kind: 'Branded Content · Vaseline',
+    body: 'Cast TikTok-native filmmakers and actors across Australia and Korea to write and produce 11 original short films, each placing characters in absurd extreme scenarios to dramatise 72-hour lip endurance in an entirely creator-led format.',
+    notes: [],
+    media: [insta('DGVTUKCy4Kj', 'Watch')],
+    links: [['TikTok film 1', 'https://www.tiktok.com/@vaselineanz/video/7494092218957909256'], ['TikTok film 2', 'https://www.tiktok.com/@vaselineanz/video/7494091768313531656'], ['TikTok film 3', 'https://www.tiktok.com/@vaselineanz/video/7494081522140531986']]
+  },
+  {
+    slug: 'scattered', title: 'Scattered', year: '2020–2021', img: 'scattered-sq.jpg', kind: 'TikTok Series · 38×1min',
+    blurb: "Three best friends retrace their steps to find Wil's ashes.",
+    body: "The day after Wil's funeral, his three best friends retrace their steps to find his ashes and give him the send-off he deserved.",
+    notes: ['Funded by Screen Australia &amp; VicScreen', 'Won Silver Drama Series, ACS Awards', 'Nominated, Best Online Series, SPA', '2M+ views, 50,000+ followers'],
+    media: [tiktok('6961022847758224641', 'Watch', 'scatteredseries')],
+    links: [['Watch on TikTok', 'https://www.tiktok.com/@scatteredseries/']]
+  },
+  {
+    slug: 'the-single-squad', title: 'The Single Squad', year: '2023', img: 'single-squad.jpg', kind: 'Scripted Podcast',
+    blurb: 'Three best friends make a pact to stay single for the last year of high school.',
+    body: 'Three best friends make a pact to stay single for the last year of high school.',
+    notes: ['Sponsored by brand partner Modibodi', 'Top 20 debut, Fiction charts'],
+    media: [drive('1hoEtaKU4RlrM-IWbs-p7ZXUbTI7PFw1h', 'Trailer')],
+    links: [['Listen on Spotify', 'https://open.spotify.com/show/4ArZ7AcbFycPyN5ueOcq4g']]
+  },
+  {
+    slug: 'jaffys', title: 'JAFFYS', year: '2023', img: 'jaffys.jpg', kind: 'TikTok Series · Creator, Director, Producer',
+    blurb: 'Melbourne teens make the leap from high school to uni, told across two TikTok accounts.',
+    body: 'Told through two interconnected TikTok accounts, JAFFYS follows Melbourne teens navigating the leap from high school to uni.',
+    notes: ["Funded by Screen Australia &amp; TikTok's Every Voice initiative", '1M+ views across two interconnected profiles'],
+    media: [tiktok('7291922864696069377', 'Watch', 'z.for.zarina')],
+    links: [['Watch the series', 'https://vt.tiktok.com/ZS9yxGNjMaaFG-a7L3m/'], ['Read coverage', 'https://if.com.au/eight-teams-of-emerging-creatives-to-receive-funding-through-every-voice-2022/']]
+  },
+  {
+    slug: 'i-cant-even', title: "i can't even.", year: '2015–2017', img: 'i-cant-even.jpg', kind: 'Web Series · Co-Creator, Producer',
+    blurb: 'Two seasons co-created with my twin sister Alyce Adams.',
+    body: 'Co-created and produced two seasons with twin sister Alyce Adams, independently running all social and audience strategy.',
+    notes: ['Winner, Best New Talent, 2015 Online Video Awards', 'Official Selection, New York &amp; Melbourne WebFest'],
+    media: [yt('QvxFNvC8JLs', 'Episode')],
+    links: [['Watch on YouTube', 'https://www.youtube.com/channel/UCO6F8cZYGpYoOct3Xe0Mpng']]
+  },
+  {
+    slug: 'mobster', title: "There's a Mobster Under My Bed", year: '2019', img: 'mobster.jpg', kind: 'Short Film · Producer',
+    blurb: 'An 8-year-old girl finds a mobster hiding under her bed.',
+    body: 'An 8-year-old girl must work out what a mobster hiding under her bed is doing there, and how to get rid of him.',
+    notes: ['Official Selection, MIFF Accelerator', 'Official Selection, Flickerfest 2020'],
+    media: [yt('SxJVaAX9GWA', 'Trailer')],
+    links: []
+  },
+  {
+    slug: 'chicken', title: 'Chicken', year: '2019', img: 'chicken.jpg', kind: 'Short Film · Producer',
+    blurb: 'Two best mates explore the Australian bush and find more than nature.',
+    body: 'In the Australian bush, two best mates set out exploring and discover more than just nature.',
+    notes: ['Winner, Best Film ($10k prize), Blue Heeler Film Festival'],
+    media: [],
+    links: [['About the film', 'http://katelefoe.com/films/chicken/']]
+  }
+];
+
+/* Claude preview pages block outside players, so there the play button opens the video in a new tab instead. */
+const EMBEDS_OK = !/claudeusercontent\.com$|claude\.ai$/.test(location.hostname);
+const PLAY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13L19 12z" fill="currentColor"/></svg>';
+let playing = null;   // only one video plays at a time
+
+function poster(card) {
+  const p = card._p, box = card.querySelector('.media');
+  box.className = 'media' + (p.cover ? ' cover' : '');
+  box.innerHTML = `<img class="bg" src="assets/${p.img}" alt="" aria-hidden="true" loading="lazy"><img class="fg" src="assets/${p.img}" alt="${p.title}" loading="lazy">`;
+  const m = p.media[0];
+  if (!m) return;
+  const btn = document.createElement(EMBEDS_OK ? 'button' : 'a');
+  btn.className = 'play';
+  btn.setAttribute('aria-label', `Play ${p.title}`);
+  btn.innerHTML = PLAY_ICON;
+  if (EMBEDS_OK) { btn.type = 'button'; btn.addEventListener('click', () => play(card)); }
+  else { btn.href = m.href; btn.target = '_blank'; btn.rel = 'noopener'; }
+  box.append(btn);
+}
+
+function play(card) {
+  if (playing && playing !== card) poster(playing);
+  playing = card;
+  const p = card._p, m = p.media[0], box = card.querySelector('.media');
+  box.className = 'media' + (m.type.includes('tall') ? ' is-tall' : '') + (m.type.includes('ig') ? ' is-ig' : '');
+  box.innerHTML = '';
+  const f = document.createElement('iframe');
+  f.src = m.src + (m.type === 'wide' && m.site === 'YouTube' ? '&autoplay=1' : '');
+  f.title = `${p.title}: ${m.label}`;
+  f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen; clipboard-write';
+  f.allowFullscreen = true;
+  f.referrerPolicy = 'strict-origin-when-cross-origin';
+  box.append(f);
+}
+
+function workCard(p) {
+  const card = document.createElement('article');
+  card.className = 'work'; card.id = p.slug; card._p = p;
+  card.innerHTML = `
+    <div class="media"></div>
+    <div class="info">
+      <div class="kind">${p.kind}</div>
+      <h3>${p.title}${p.year ? `<span>${p.year}</span>` : ''}</h3>
+      <p>${p.body}</p>
+      ${p.notes.length ? `<ul>${p.notes.map(n => `<li>${n}</li>`).join('')}</ul>` : ''}
+      ${p.links.length ? `<div class="out">${p.links.map(([t, u]) => `<a href="${u}" target="_blank" rel="noopener">${t} ↗</a>`).join('')}</div>` : ''}
+    </div>`;
+  poster(card);
+  return card;
+}
+document.getElementById('works').append(...originals.map(workCard));
+
+/* ---------- resume request ----------
+   The button opens a short panel. "Write the email" starts a pre-filled email to Hayley;
+   the copy button covers visitors who don't have an email app set up. */
+const ask = document.getElementById('ask');
+const copyBtn = document.getElementById('ask-copy');
+document.querySelectorAll('[data-request]').forEach(b => b.addEventListener('click', () => {
+  copyBtn.textContent = 'Copy';
+  ask.showModal(); document.body.classList.add('locked');
+}));
+function closeAsk() { ask.close(); document.body.classList.remove('locked'); }
+document.getElementById('ask-close').addEventListener('click', closeAsk);
+ask.addEventListener('cancel', e => { e.preventDefault(); closeAsk(); });
+ask.addEventListener('click', e => { if (e.target === ask) closeAsk(); });
+copyBtn.addEventListener('click', () => {
+  const addr = document.getElementById('ask-addr');
+  const selectIt = () => {
+    const r = document.createRange(); r.selectNodeContents(addr);
+    const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    copyBtn.textContent = 'Selected';
+  };
+  try {
+    navigator.clipboard.writeText(addr.textContent).then(() => { copyBtn.textContent = 'Copied'; }, selectIt);
+  } catch (e) { selectIt(); }
+});
+</script>
+</body>
+</html>
